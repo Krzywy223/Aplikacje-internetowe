@@ -197,6 +197,8 @@ img {
     .container {
         grid-template-columns: auto;
         grid-template-rows: auto 1fr auto auto;
+        background-color: black;
+        background-image: none;
         grid-template-areas:
                     "header"
                     "content"
@@ -221,5 +223,54 @@ img {
         padding-bottom: 2%;
         height: auto;
         display: block;
+    }
+
+    .header, .content, .footer {
+        text-align: center; /* Centralne wyrównanie dla tekstu */
+    }
+
+    .content p {
+        text-align: justify; /* Wyrównanie tekstu do boków */
+        padding: 0 10px; /* Dodanie wewnętrznego marginesu */
+    }
+
+    .sidebar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo {
+        text-align: center;
+    }
+
+    .photo img {
+        width: 60%; /* Dostosowanie szerokości zdjęć do mniejszego ekranu */
+        padding-top: 1%;
+        padding-bottom: 2%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Centrowanie obrazków */
+    }
+
+    .content img {
+        width: 80%; /* Mniejsze obrazki w sekcji content na telefonie */
+        height: auto;
+        margin: 10px auto; /* Centrowanie obrazków */
+        display: block;
+    }
+
+    .list ul li {
+        width: 100%; /* Listy w pełnej szerokości na telefonie */
+        margin: 5px 0;
+    }
+
+    .sidebar ul li {
+        width: 100%; /* Przyciski w pełnej szerokości na telefonie */
+        margin: 5px 0;
+    }
+
+    .footer {
+        padding: 10px 5px;
+        line-height: 20px;
     }
 }
