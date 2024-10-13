@@ -1,22 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Sixtyfour+Convergence&display=swap');
+@keyframes blink {
+    0% {  background-color: black; }
+    50% {  background-color: #204829; }
+    100% {  background-color: black; }
+}
+
 .container {
     display: grid;
-    gap: 1em;
+    gap: 0.5em;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr auto;
-    min-height: 95vh;
+    min-height: 100vh;
     background-image: url("/images/matrix.gif");
+    background-size: cover;
 
     grid-template-areas:
                 "header header"
                 "sidebar sidebar"
                 "photo content"
+                "list content"
                 "footer footer";
 }
+
+.footer {
+    grid-area: footer;
+    background-color: black;
+    color: #22b455;
+    text-align: center;
+    padding: 10px;
+    line-height: 50px;
+}
+
 html, body {
     padding: 0;
     margin: 0;
-    font-family: 'Sixtyfour Convergence', sans-serif;
+    height: 100%;
+    font-family: "Press Start 2P", system-ui;
+    color: #22b455;
+    overflow-x: hidden;
 }
 .header {
     grid-area: header;
@@ -28,6 +49,7 @@ html, body {
 }
 
 .sidebar {
+    background-color: black;
     grid-area: sidebar;
     color: #204829;
     padding: 10px;
@@ -59,8 +81,7 @@ html, body {
 }
 
 .sidebar ul li:hover {
-    background-color: #204829; /* Podświetlenie przy najechaniu kursorem */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dodaje lekki cień przy hoverze */
+    animation: blink 1s infinite;
 }
 
 .sidebar a {
@@ -76,40 +97,101 @@ html, body {
     height: 100%;
     border-radius: 10px;
 }
+.list {
+    grid-area: list;
+    background-color: black;
+    color: #3d804b;
+    background-opacity: 1;
+}
+.list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.list ul li {
+    background-color: black;
+    padding: 10px;
+    transition-duration: 1s;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 2em;
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list ul li:hover {
+    background-color: #204829;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 img {
     width: 30%;
     height: auto;
     display: block;
 }
-
 .photo {
-    width: 100%;
+    grid-area: photo;
+    background-color: black;
+
+    color: #3d804b;
+    background-opacity: 1;
+}
+
+@keyframes enlarge {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.photo img {
+    width: 90%;
+    padding-top: 40%;
+    padding-left: 6px;
+    padding-bottom: 30%;
     height: auto;
     display: block;
 }
-.photo img {
-    float: left;
-    margin-right: 10px; /* Dostosuj wartość marginesu według potrzeb */
+.photo img:hover {
+    animation: enlarge 2s forwards;
 }
 
 .content {
     grid-area: content;
     background-color: black;
     padding: 3%;
-    color: #295d35;
+    font-size: 16px;
+    color: #3d804b;
     background-opacity: 1;
 }
 
 .content p{
     text-align: -webkit-left;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #204829;
+    line-height: 30px;
 }
 .content h2 {
     text-align: center;
     color: #22b455;
 }
+.content img {
+    margin-right: 10px; /* Adjust margin as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+    width: 30%;
+    height: auto;
+    display: block;
+}
+
 
 @media screen and (max-width: 420px) {
     .container {
@@ -118,6 +200,8 @@ img {
         grid-template-areas:
                     "header"
                     "content"
+                    "list"
+                    "photo"
                     "sidebar"
                     "footer";
     }
@@ -125,5 +209,17 @@ img {
     .sidebar ul {
         flex-direction: column;
         align-items: center;
+    }
+
+    .photo
+    {
+        text-align: center;
+    }
+    .photo img {
+        width: 60%;
+        padding-top: 1%;
+        padding-bottom: 2%;
+        height: auto;
+        display: block;
     }
 }
