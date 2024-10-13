@@ -3,45 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Lab A Milosz Krzywy</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1>Lorem Ipsum</h1>
+<div class="container">
+    <div class="header" style="grid-area: header;">
+        <h1>LAB A</h1>
     </div>
-    <div class="menu">
-        Druga strona: <a href="index2.html">index2.html</a>
+    <div class="sidebar" style="grid-area: sidebar;">
+        <ul>
+            <li><a href="index.html">Pierwsza strona</a>
+            <li><a href="index.html">Pierwsza strona</a>
+            <li><a href="index2.html">Druga strona</a>
+            <li><a href="index2.html">Druga strona</a>
+        </ul>
     </div>
-    <div class="content">
+    <div class="content" style="grid-area: content;">
         <h2>What is Lorem Ipsum?</h2>
         <h3>Why do we use it?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque elit nunc, vehicula sit amet elit quis,
-                fringilla consequat ipsum. Sed efficitur sapien ac mollis convallis.
-                Donec ac fermentum nisi. Duis efficitur venenatis tellus eget malesuada.
-                Nam quis est ligula. Integer vehicula, tellus non gravida convallis, metus nibh euismod ante,
-                non lobortis sapien sem eu neque. Morbi tincidunt et velit id consequat. Pellentesque ac
-                massa aliquam, maximus augue sed, scelerisque turpis.
-            </p>
-        <div class="photo">
-            <img src="images/car.jpg" alt="car">
-        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque elit nunc, vehicula sit amet elit quis,
+            fringilla consequat ipsum. Sed efficitur sapien ac mollis convallis.
+            Donec ac fermentum nisi.<br> Duis efficitur venenatis tellus eget malesuada.
+            Nam quis est ligula. Integer vehicula, tellus non gravida convallis, metus nibh euismod ante,
+            non lobortis sapien sem eu neque. Morbi tincidunt et velit id consequat. Pellentesque ac
+            massa aliquam, maximus augue sed, scelerisque turpis.
+        </p>
         <h2>Where does it come from?</h2>
-            <p> In pellentesque, quam semper euismod euismod,
-                augue neque fringilla massa, nec mattis orci
-                diam et sem. Aliquam pharetra laoreet justo.
-                Aenean venenatis ullamcorper enim, vitae congue
-                ante tempus euismod. Nulla viverra velit in tortor efficitur iaculis.
-                Pellentesque hendrerit magna at consequat porttitor. Sed quis quam posuere,
-                maximus ipsum nec, eleifend ex. In hac habitasse platea dictumst. Duis id ipsum
-                eget urna varius tristique. Mauris mattis egestas facilisis.
-            </p>
+        <p>
+            In pellentesque, quam semper euismod euismod,
+            augue neque fringilla massa, nec mattis orci
+            diam et sem. Aliquam pharetra laoreet justo.
+            Aenean venenatis ullamcorper enim, vitae congue
+            ante tempus euismod.<br> Nulla viverra velit in tortor efficitur iaculis.
+            Pellentesque hendrerit magna at consequat porttitor. Sed quis quam posuere,
+            maximus ipsum nec, eleifend ex. In hac habitasse platea dictumst. Duis id ipsum
+            eget urna varius tristique. Mauris mattis egestas facilisis.
+        </p>
+        <div class="photo"><img src="/images/car.jpg" alt="Car"><img src="/images/mount.avif" alt="mountains"><img src="images/road.avif" alt="road"></div>
         <ul>
             <li>First</li>
             <li>Second</li>
             <li>Third</li>
         </ul>
-        </li>
     </div>
+    <div class="footer" style="grid-area: footer;">
+        <p>Created by Milosz Krzywy</p>
+    </div>
+</div>
 </body>
 </html>
