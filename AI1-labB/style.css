@@ -1,0 +1,124 @@
+/* style.css */
+
+/* Stylowanie dla całego body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styl dla inputów */
+input[type="text"], input[type="date"] {
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    width: 280px;
+    box-sizing: border-box;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* Styl dla przycisku */
+button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Styl dla listy zadań */
+ul#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 320px;
+}
+
+ul#taskList li {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+ul#taskList li:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styl dla tekstu w zadaniach */
+ul#taskList li span {
+    flex-grow: 1;
+    margin-right: 10px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Stylowanie dla zadania z usuwaniem */
+ul#taskList li button {
+    padding: 8px 12px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+ul#taskList li button:hover {
+    background-color: #b02a37;
+}
+
+/* Styl dla wyszukiwarki */
+input[placeholder="Wyszukiwarka"] {
+    padding: 12px 15px;
+    margin: 15px 0;
+    width: 320px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+input[placeholder="Wyszukiwarka"]:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
