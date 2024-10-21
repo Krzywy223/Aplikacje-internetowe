@@ -1,6 +1,4 @@
-/* style.css */
 
-/* Stylowanie dla całego body */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f9;
@@ -18,13 +16,12 @@ h1 {
     color: #333;
 }
 
-/* Styl dla inputów */
-input[type="text"], input[type="date"] {
+input[type="text"][placeholder="Zadanie"], input[type="date"][id = "date"] {
     padding: 12px 15px;
     margin: 8px 0;
     border: 1px solid #ddd;
     border-radius: 25px;
-    width: 280px;
+    width: 200px;
     box-sizing: border-box;
     font-size: 16px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -34,6 +31,16 @@ input[type="text"], input[type="date"] {
 input[type="text"]:focus, input[type="date"]:focus {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     outline: none;
+}
+
+.task-edit-input {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 120px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Styl dla przycisku */
@@ -56,17 +63,17 @@ button:hover {
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
 }
 
-/* Styl dla listy zadań */
+
 ul#taskList {
     list-style-type: none;
     padding: 0;
     margin-top: 20px;
-    width: 320px;
+    width: 400px;
 }
 
 ul#taskList li {
     background-color: #ffffff;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -85,15 +92,17 @@ ul#taskList li:hover {
 /* Styl dla tekstu w zadaniach */
 ul#taskList li span {
     flex-grow: 1;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
     color: #333;
     font-weight: 500;
 }
 
-/* Stylowanie dla zadania z usuwaniem */
 ul#taskList li button {
-    padding: 8px 12px;
+    padding: 8px 15px;
     background-color: #dc3545;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.56);
+    margin-bottom: 5px;
     color: white;
     border: none;
     border-radius: 20px;
@@ -104,9 +113,9 @@ ul#taskList li button {
 
 ul#taskList li button:hover {
     background-color: #b02a37;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.56);
 }
 
-/* Styl dla wyszukiwarki */
 input[placeholder="Wyszukiwarka"] {
     padding: 12px 15px;
     margin: 15px 0;
@@ -121,4 +130,22 @@ input[placeholder="Wyszukiwarka"] {
 input[placeholder="Wyszukiwarka"]:focus {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     outline: none;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.task-name.collapsed {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+    cursor: pointer;
+}
+
+.task-name.expanded {
+    white-space: normal;
+    overflow: visible;
+    cursor: pointer;
 }
