@@ -6,7 +6,7 @@ function addTaskToList(taskName, taskDate, taskId) {
     li.id = taskId || `task-${taskIdCounter++}`;
 
     var taskSpan = document.createElement("span");
-    taskSpan.className = "task-name collapsed";  // Start with collapsed class
+    taskSpan.className = "task-name collapsed";
     taskSpan.appendChild(document.createTextNode(taskName));
 
     taskSpan.onclick = function() {
@@ -28,7 +28,7 @@ function addTaskToList(taskName, taskDate, taskId) {
 
     dateSpan.onclick = function() {
         editTaskDate(dateSpan);
-    }
+    };
 
     // Create delete button
     var deleteButton = document.createElement("button");
@@ -44,7 +44,6 @@ function addTaskToList(taskName, taskDate, taskId) {
     li.appendChild(deleteButton);
     ul.appendChild(li);
 }
-
 
 function editTaskName(taskSpan, taskId) {
     var input = document.createElement("input");
@@ -89,14 +88,12 @@ function saveEditedTaskDate(input, dateSpan) {
 
     if (newTaskDate === "") {
         dateSpan.textContent = "no date";
-    }
-    else if (newTaskDate >= new Date().toISOString().split('T')[0]) {
+    } else if (newTaskDate >= new Date().toISOString().split('T')[0]) {
         dateSpan.textContent = newTaskDate;
     }
 
     input.replaceWith(dateSpan);
     saveTasks();
-
 }
 
 function saveEditedTaskName(input, taskSpan, taskId) {
@@ -148,3 +145,33 @@ function loadTasks() {
 }
 
 document.addEventListener('DOMContentLoaded', loadTasks);
+
+
+function searchTasks() {
+    var searchInput = document.getElementById("search").value.toLowerCase();
+    var tasks = document.querySelectorAll('#taskList li');
+
+    tasks.forEach(function(task) {
+        var taskNameSpan = task.querySelector('.task-name');
+        var originalText = taskNameSpan.getAttribute('data-original-text') || taskNameSpan.textContent;
+
+        taskNameSpan.innerHTML = originalText;
+
+        if (searchInput) {
+            var taskName = originalText.toLowerCase();
+
+            if (taskName.includes(searchInput)) {
+                var regex = new RegExp(`(${searchInput})`, 'gi');
+                var highlightedText = originalText.replace(regex, '<span id="spanHighlight" class="highlight">$1</span>');
+                taskNameSpan.innerHTML = highlightedText;
+                task.style.display = '';
+            } else {
+                task.style.display = 'none';
+            }
+        } else {
+            task.style.display = '';
+        }
+
+        taskNameSpan.setAttribute('data-original-text', originalText);
+    });
+}

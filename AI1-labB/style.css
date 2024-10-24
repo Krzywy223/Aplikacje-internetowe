@@ -1,151 +1,141 @@
-
+/* General Styles - Dark Theme */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #181a1b;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
+    padding: 40px;
+    color: #e4e6eb;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
-
-input[type="text"][placeholder="Zadanie"], input[type="date"][id = "date"] {
-    padding: 12px 15px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    width: 200px;
-    box-sizing: border-box;
-    font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
+input[type="text"], input[type="date"] {
+    padding: 12px;
+    width: 320px;
+    margin: 10px 0;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #242526;
+    color: #e4e6eb;
+    transition: border-color 0.3s ease-in-out;
 }
 
 input[type="text"]:focus, input[type="date"]:focus {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-color: #007bff;
     outline: none;
 }
 
-.task-edit-input {
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    font-size: 14px;
-    width: 120px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Styl dla przycisku */
 button {
-    padding: 12px 20px;
+    padding: 12px 25px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.4);
+    font-size: 15px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
 }
 
-
-ul#taskList {
+/* Task List */
+ul {
     list-style-type: none;
     padding: 0;
     margin-top: 20px;
-    width: 400px;
 }
 
-ul#taskList li {
-    background-color: #ffffff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
+li {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #242526;
+    border: 1px solid #333;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-ul#taskList li:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+li:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Styl dla tekstu w zadaniach */
-ul#taskList li span {
+li span.task-name {
     flex-grow: 1;
-    margin-right: 20px;
-    margin-left: 20px;
-    color: #333;
-    font-weight: 500;
+    font-size: 16px;
+    color: #e4e6eb;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
 }
 
-ul#taskList li button {
-    padding: 8px 15px;
+li span.task-name.expanded {
+    color: #007bff;
+}
+
+li span.task-name.collapsed {
+    color: #b0b3b8;
+}
+
+/* Date Styling */
+li span.task-date {
+    color: #a3a6aa;
+    font-size: 14px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.delete-button {
     background-color: #dc3545;
-    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.56);
-    margin-bottom: 5px;
     color: white;
     border: none;
-    border-radius: 20px;
-    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-ul#taskList li button:hover {
-    background-color: #b02a37;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.56);
+.delete-button:hover {
+    background-color: #c82333;
 }
 
-input[placeholder="Wyszukiwarka"] {
-    padding: 12px 15px;
-    margin: 15px 0;
+/* Edit Input */
+.task-edit-input {
+    padding: 12px;
     width: 320px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
+    margin: 5px 0;
+    border: 2px solid #333;
+    border-radius: 5px;
     font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-input[placeholder="Wyszukiwarka"]:focus {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    outline: none;
+    background-color: #242526;
+    color: #e4e6eb;
+    transition: border-color 0.3s ease-in-out;
 }
 
 .highlight {
-    background-color: yellow;
+    background-color: #ffeb3b;
+    font-weight: bold;
+    padding: 0 2px;
+    color: #000;
 }
 
-.task-name.collapsed {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 120px;
-    cursor: pointer;
+#search {
+    width: 320px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #242526;
+    color: #e4e6eb;
+    transition: border-color 0.3s ease-in-out;
 }
 
-.task-name.expanded {
-    white-space: normal;
-    overflow: visible;
-    cursor: pointer;
+#search:focus {
+    border-color: #007bff;
+    outline: none;
 }
