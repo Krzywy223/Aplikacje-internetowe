@@ -18,7 +18,7 @@ function addTaskToList(taskName, taskDate, taskId) {
             taskSpan.classList.remove('expanded');
             taskSpan.classList.add('collapsed');
         }
-        editTaskName(taskSpan, li.id); // Enable editing
+        editTaskName(taskSpan, li.id);
     };
 
     // Create task date span
@@ -99,15 +99,11 @@ function saveEditedTaskDate(input, dateSpan) {
 function saveEditedTaskName(input, taskSpan, taskId) {
     var newTaskName = input.value.trim();
 
-    // Validate the new task name length (between 3 and 255 characters)
     if (newTaskName.length >= 3 && newTaskName.length <= 255) {
         taskSpan.textContent = newTaskName;
     }
 
-    // Replace the input back with the updated span
     input.replaceWith(taskSpan);
-
-    // Save changes to local storage
     saveTasks();
 }
 
@@ -130,14 +126,14 @@ function saveTasks() {
         tasks.push({ id: task.id, name: taskName, date: taskDate });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    console.log("Tasks saved:", tasks); // Debugging statement
+    console.log("Tasks saved:", tasks);
 }
 
 function loadTasks() {
     var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     var ul = document.getElementById("taskList");
-    ul.innerHTML = ''; // Clear the existing list
-    console.log("Loading tasks:", tasks); // Debugging statement
+    ul.innerHTML = '';
+    console.log("Loading tasks:", tasks);
 
     tasks.forEach(function(task) {
         addTaskToList(task.name, task.date, task.id);
