@@ -10,7 +10,7 @@ function addTaskToList(taskName, taskDate, taskId) {
     taskSpan.appendChild(document.createTextNode(taskName));
 
     taskSpan.onclick = function() {
-        // Toggle between expanded and collapsed on click
+        
         if (taskSpan.classList.contains('collapsed')) {
             taskSpan.classList.remove('collapsed');
             taskSpan.classList.add('expanded');
@@ -21,7 +21,6 @@ function addTaskToList(taskName, taskDate, taskId) {
         editTaskName(taskSpan, li.id);
     };
 
-    // Create task date span
     var dateSpan = document.createElement("span");
     dateSpan.className = "task-date";
     dateSpan.appendChild(document.createTextNode(taskDate || "no date"));
