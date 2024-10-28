@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TODO list</title>
+  <title>TODO List</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script> <!-- Load the script after the HTML content -->
 </head>
 <body>
-<input type="text" placeholder="Wyszukiwarka" id="search" oninput="searchTasks()"><br>
+<input type="text" placeholder="Search" id="search"><br>
 <ul id="taskList"></ul>
-<input type="text" id="zadanie" placeholder="Zadanie">
+<input type="text" id="zadanie" placeholder="Task">
 <input type="date" id="date">
-<button onclick="add()">Add task</button>
+<button id="addButton">Add task</button>
 </body>
 </html>
