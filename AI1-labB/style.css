@@ -1,4 +1,3 @@
-/* General Styles - Dark Theme */
 body {
     font-family: 'Helvetica Neue', sans-serif;
     background-color: #181a1b;
@@ -103,7 +102,6 @@ li span.task-date {
     background-color: #c82333;
 }
 
-/* Edit Input */
 .task-edit-input {
     padding: 12px;
     width: 320px;
