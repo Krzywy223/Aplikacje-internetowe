@@ -1,0 +1,25 @@
+#map {
+    width: 600px;
+    height: 300px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#rasterMap {
+    width: 600px;
+    height: 300px;
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#puzzleContainer {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    position: relative;
+    width: 600px;
+    height: 300px;
+    border: 1px solid black;
+}
