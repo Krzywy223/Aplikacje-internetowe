@@ -1,25 +1,70 @@
-#map {
-    width: 600px;
-    height: 300px;
-    border: 1px solid black;
-    display: inline-block;
-    vertical-align: top;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-#rasterMap {
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#2elementsInRow {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+.map-container {
     width: 600px;
     height: 300px;
-    border: 1px solid black;
-    display: inline-block;
-    vertical-align: top;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 #puzzleContainer {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 20px;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     width: 600px;
     height: 300px;
-    border: 1px solid black;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004494;
 }
