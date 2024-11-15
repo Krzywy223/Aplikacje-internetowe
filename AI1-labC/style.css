@@ -6,35 +6,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
+    flex-direction: column;
 }
 
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#2elementsInRow {
-    display: flex;
-    justify-content: space-between;
-    width: 600px;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
 }
 
 .map-container {
-    width: 600px;
-    height: 300px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-#puzzleContainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 300px;
     border: 2px solid #333;
     border-radius: 8px;
@@ -46,7 +32,8 @@ body {
 #buttons {
     display: flex;
     justify-content: space-between;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
 }
 
 button {
@@ -68,3 +55,15 @@ button:hover {
 button:active {
     background-color: #004494;
 }
+
+#rasterMap {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: none;
+}
+
