@@ -2,5 +2,6 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/AI1-labF/sql/01-post.sql" dialect="SQLite" />
+    <file url="file://$PROJECT_DIR$/AI1-labF/sql/02-games.sql" dialect="SQLite" />
   </component>
 </project>
